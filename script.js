@@ -77,13 +77,14 @@ const membres = [
     poste: "",
     commission: "Relations publiques"
   },
+
   {
-    nom:"Mpoyi",
-    postnom:"kapinga",
-    prenom:"princesse",
-    promotion:"M1 DROIT",
-    poste:"",
-    commission:"Relations publiques"
+    nom: "Mpoy",
+    postnom: "Kapinga",
+    prenom: "Princesse",
+    promotion: "M1 Droit",
+    poste: "",
+    commission: "Relations publiques"
   },
 
   {
@@ -232,7 +233,7 @@ const membres = [
 
   {
     nom: "Kompani",
-    postnom: "",
+    postnom: "Kompani",
     prenom: "Marina",
     promotion: "L2 FED",
     poste: "",
@@ -276,58 +277,53 @@ boutonCommencer.addEventListener("click", function () {
 boutonChercher.addEventListener("click", rechercherMembre);
 
 champNom.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") rechercherMembre();
+  if (event.key === "Enter") {
+    rechercherMembre();
+  }
 });
 
 function rechercherMembre() {
+  const recherche = normaliserNom(champNom.value);
 
-  const nomEntre = normaliserNom(champNom.value);
-
-  if (nomEntre === "") {
-
-    messageErreur.textContent =
-      "Entre ton nom et ton prénom pour retrouver ton résultat.";
-
-    messageErreur.style.display = "block";
-
+  if (recherche === "") {
+    afficherErreur(
+      "Entre ton nom et ton prénom pour retrouver ton résultat."
+    );
     return;
   }
 
-  const motsEntres = nomEntre
+  const motsRecherche = recherche
     .split(" ")
     .filter(Boolean);
 
   const membreTrouve = membres.find(function (membre) {
+    const nom = normaliserNom(membre.nom);
+    const prenom = normaliserNom(membre.prenom);
+    const postnom = normaliserNom(membre.postnom || "");
 
-    const identiteComplete = normaliserNom(
-      `${membre.nom} ${membre.postnom || ""} ${membre.prenom}`
-    );
+    const motsNom = nom.split(" ").filter(Boolean);
+    const motsPrenom = prenom.split(" ").filter(Boolean);
+    const motsPostnom = postnom.split(" ").filter(Boolean);
 
-    const motsIdentite = identiteComplete
-      .split(" ")
-      .filter(Boolean);
+    const motsIdentite = [
+      ...motsNom,
+      ...motsPostnom,
+      ...motsPrenom
+    ];
 
-    return motsEntres.every(function (mot) {
+    return motsRecherche.every(function (mot) {
       return motsIdentite.includes(mot);
     });
-
   });
 
   if (membreTrouve) {
-
     messageErreur.style.display = "none";
-
-    afficherCarte(membreTrouve);
-
+    afficherResultat(membreTrouve);
   } else {
-
-    messageErreur.textContent =
-      "Nous n'avons pas retrouvé ce nom. Vérifie l'orthographe de ton nom et de ton prénom.";
-
-    messageErreur.style.display = "block";
-
+    afficherErreur(
+      "Nous n'avons pas retrouvé ce nom. Vérifie l'orthographe de ton nom et de ton prénom."
+    );
   }
-
 }
 
 function afficherErreur(message) {
@@ -336,7 +332,7 @@ function afficherErreur(message) {
 }
 
 function normaliserNom(nom) {
-  return nom
+  return String(nom || "")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -346,25 +342,42 @@ function normaliserNom(nom) {
 }
 
 function blocInfo(label, valeur) {
-  if (!valeur) return "";
+  if (!valeur) {
+    return "";
+  }
+
   return `
-    <p class="resultat-label">${label}</p>
-    <p class="resultat-valeur">${valeur}</p>
+    <div class="resultat-item">
+      <p class="resultat-label">${label}</p>
+      <p class="resultat-valeur">${valeur}</p>
+    </div>
   `;
 }
 
 function afficherResultat(membre) {
   rechercheCard.innerHTML = `
-    <img src="images/logo-dynamique.png" alt="Logo Dynamique Femme UCC" class="logo-dynamique">
-    <p class="annee">DYNAMIQUE FEMME UCC • 2026 — 2027</p>
+    <img
+      src="images/logo-dynamique.png"
+      alt="Logo Dynamique Femme UCC"
+      class="logo-dynamique"
+    >
 
-    <span class="badge-felicitation">CANDIDATURE RETENUE 🎉</span>
+    <p class="annee">
+      DYNAMIQUE FEMME UCC • 2026 — 2027
+    </p>
 
-    <h2 class="nom-resultat">Félicitations, ${membre.prenom} !</h2>
+    <span class="badge-felicitation">
+      CANDIDATURE RETENUE 🎉
+    </span>
+
+    <h2 class="nom-resultat">
+      Félicitations, ${membre.prenom} !
+    </h2>
 
     <p class="description">
-      Nous avons le plaisir de t'annoncer que ta candidature a été retenue pour rejoindre
-      la <strong>Dynamique Femme UCC</strong> pour l'année 2026-2027.
+      Nous avons le plaisir de t'annoncer que ta candidature a été retenue
+      pour rejoindre la <strong>Dynamique Femme UCC</strong>
+      pour l'année 2026-2027.
     </p>
 
     <div class="resultat-box">
@@ -373,11 +386,18 @@ function afficherResultat(membre) {
       ${blocInfo("TA PROMOTION", membre.promotion)}
     </div>
 
-    <p class="description" style="margin-top: 28px; margin-bottom: 10px;">
-      Bienvenue dans l'équipe. Nous avons hâte de construire cette nouvelle année avec toi 💙
+    <p
+      class="description"
+      style="margin-top: 28px; margin-bottom: 10px;"
+    >
+      Bienvenue dans l'équipe. Nous avons hâte de construire cette nouvelle
+      année avec toi 💙
     </p>
 
-    <button class="retour-btn" onclick="location.reload()">
+    <button
+      class="retour-btn"
+      onclick="location.reload()"
+    >
       Rechercher un autre nom
     </button>
   `;
