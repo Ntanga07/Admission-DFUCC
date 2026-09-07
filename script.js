@@ -17,12 +17,12 @@ const membres = [
   { nom: "Sung Ni-Hang", prenom: "Victoire", promotion: "L2 Droit", poste: "", commission: "Secrétariat" },
   { nom: "Pika", prenom: "Pistis", promotion: "M1 SPO", poste: "", commission: "Secrétariat" },
   { nom: "Metta", prenom: "Davina", promotion: "L2 FED", poste: "Secrétaire ELF", commission: "Secrétariat" },
-  { nom: "Kabey", prenom: "Sala Lys", promotion: "", poste: "Adjoint", commission: "Trésorerie" },
+  { nom: "Kabey", prenom: "Lys", promotion: "", poste: "Adjoint", commission: "Trésorerie" },
   { nom: "Khandy", prenom: "Florentine", promotion: "L3 Droit", poste: "", commission: "Protocole" },
   { nom: "Ghata", prenom: "Marie Antoinette", promotion: "L2 FED", poste: "", commission: "Protocole" },
   { nom: "Badianga", prenom: "Divine", promotion: "L2 FED", poste: "", commission: "Protocole" },
-  { nom: "Mwanza", prenom: "Dileovie", promotion: "LAU", poste: "", commission: "Protocole" },
-  { nom: "Kalukodj", prenom: "Marie Michelle", promotion: "L2 FED", poste: "", commission: "Protocole" },
+  { nom: "Mwanza", prenom: "Dileovie", promotion: "", poste: "", commission: "Protocole" },
+  { nom: "Kalukodi", prenom: "Marie Michelle", promotion: "L2 FED", poste: "", commission: "Protocole" },
   { nom: "Lupembe", prenom: "Asia Maria", promotion: "M1", poste: "", commission: "Protocole" },
   { nom: "Amini", prenom: "Jessica", promotion: "", poste: "", commission: "Protocole" },
   { nom: "Aniboti", prenom: "Prisca", promotion: "", poste: "", commission: "Protocole" },
@@ -33,7 +33,8 @@ const membres = [
   { nom: "Kompani", prenom: "Davina", promotion: "L2 FED", poste: "", commission: "Sensibilisation" },
   { nom: "Lamiel", prenom: "Lilas", promotion: "M1 SPO", poste: "", commission: "Sensibilisation" },
   { nom: "Ciama", prenom: "Marie Corinne", promotion: "L3 FED", poste: "", commission: "Logistique" },
-  { nom: "Matabara", prenom: "Avelange", promotion: "L3 FED", poste: "", commission: "Logistique" }
+  { nom: "Matabara", prenom: "Avelange", promotion: "L3 FED", poste: "", commission: "Logistique" },
+  { nom: "Mpoyi", prenom:"princesse", promotion:"", poste:"",commission:"Relations publiques"},
 ];
 
 boutonCommencer.addEventListener("click", function () {
