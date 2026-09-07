@@ -6,35 +6,257 @@ const champNom = document.getElementById("nomMembre");
 const messageErreur = document.getElementById("messageErreur");
 
 const membres = [
-  { nom: "SIMAY", prenom: "Josianne", promotion: "", poste: "Présentatrice", commission: "Communications" },
-  { nom: "Mansuka", prenom: "Tegra", promotion: "L2 FED", poste: "Vidéaste secondaire", commission: "Communications" },
-  { nom: "Kandolo", prenom: "Jocelyne", promotion: "L3 Droit", poste: "Rédactrice", commission: "Communications" },
-  { nom: "Kidiadi", prenom: "Manuella", promotion: "L3 Droit", poste: "Rédactrice", commission: "Communications" },
-  { nom: "Kanyinda", prenom: "Hogla", promotion: "M2 SPO", poste: "", commission: "Relations publiques" },
-  { nom: "Mulowayi", prenom: "Rachel", promotion: "M1 CS", poste: "", commission: "Relations publiques" },
-  { nom: "Dalucia", prenom: "Kanku", promotion: "", poste: "", commission: "Relations publiques" },
-  { nom: "Jael", prenom: "Olonga", promotion: "M2 FED", poste: "", commission: "Relations publiques" },
-  { nom: "Sung Ni-Hang", prenom: "Victoire", promotion: "L2 Droit", poste: "", commission: "Secrétariat" },
-  { nom: "Pika", prenom: "Pistis", promotion: "M1 SPO", poste: "", commission: "Secrétariat" },
-  { nom: "Metta", prenom: "Davina", promotion: "L2 FED", poste: "Secrétaire ELF", commission: "Secrétariat" },
-  { nom: "Kabey", prenom: "Lys", promotion: "", poste: "Adjoint", commission: "Trésorerie" },
-  { nom: "Khandy", prenom: "Florentine", promotion: "L3 Droit", poste: "", commission: "Protocole" },
-  { nom: "Ghata", prenom: "Marie Antoinette", promotion: "L2 FED", poste: "", commission: "Protocole" },
-  { nom: "Badianga", prenom: "Divine", promotion: "L2 FED", poste: "", commission: "Protocole" },
-  { nom: "Mwanza", prenom: "Dileovie", promotion: "", poste: "", commission: "Protocole" },
-  { nom: "Kalukodi", prenom: "Marie Michelle", promotion: "L2 FED", poste: "", commission: "Protocole" },
-  { nom: "Lupembe", prenom: "Asia Maria", promotion: "M1", poste: "", commission: "Protocole" },
-  { nom: "Amini", prenom: "Jessica", promotion: "", poste: "", commission: "Protocole" },
-  { nom: "Aniboti", prenom: "Prisca", promotion: "", poste: "", commission: "Protocole" },
-  { nom: "Minduku", prenom: "Tony-Michael", promotion: "M1 SPO", poste: "Adjoint", commission: "Sensibilisation" },
-  { nom: "Lokondo", prenom: "Giovanni", promotion: "M2 Droit", poste: "", commission: "Sensibilisation" },
-  { nom: "Sakandadu", prenom: "Gloire", promotion: "L2 Droit", poste: "", commission: "Sensibilisation" },
-  { nom: "Mabesi", prenom: "Gerbie", promotion: "L2 FED", poste: "", commission: "Sensibilisation" },
-  { nom: "Kompani", prenom: "Davina", promotion: "L2 FED", poste: "", commission: "Sensibilisation" },
-  { nom: "Lamiel", prenom: "Lilas", promotion: "M1 SPO", poste: "", commission: "Sensibilisation" },
-  { nom: "Ciama", prenom: "Marie Corinne", promotion: "L3 FED", poste: "", commission: "Logistique" },
-  { nom: "Matabara", prenom: "Avelange", promotion: "L3 FED", poste: "", commission: "Logistique" },
-  { nom: "Mpoyi", prenom:"princesse", promotion:"", poste:"",commission:"Relations publiques"},
+  {
+    nom: "SIMAY",
+    postnom: "MOURA",
+    prenom: "JOSIANE",
+    promotion: "",
+    poste: "Présentatrice",
+    commission: "Communications"
+  },
+
+  {
+    nom: "MASANKA",
+    postnom: "BITEMA",
+    prenom: "TEGRA",
+    promotion: "L2 FED",
+    poste: "Vidéaste secondaire",
+    commission: "Communications"
+  },
+
+  {
+    nom: "Kandolo",
+    postnom: "Mapana",
+    prenom: "Jocelyne",
+    promotion: "L3 Droit",
+    poste: "Rédactrice",
+    commission: "Communications"
+  },
+
+  {
+    nom: "Kidiadi",
+    postnom: "Masivi",
+    prenom: "Manuella",
+    promotion: "L3 Droit",
+    poste: "Rédactrice",
+    commission: "Communications"
+  },
+
+  {
+    nom: "Kanyinda",
+    postnom: "Ngoyi",
+    prenom: "Hogla",
+    promotion: "M2 SPO",
+    poste: "",
+    commission: "Relations publiques"
+  },
+
+  {
+    nom: "Mulowayi",
+    postnom: "",
+    prenom: "Rachel",
+    promotion: "M1 CS",
+    poste: "",
+    commission: "Relations publiques"
+  },
+
+  {
+    nom: "KANKU",
+    postnom: "MUKOLE",
+    prenom: "Dalucia",
+    promotion: "",
+    poste: "",
+    commission: "Relations publiques"
+  },
+
+  {
+    nom: "Olonga",
+    postnom: "Wa-latuyalaka",
+    prenom: "Jaël",
+    promotion: "M2 FED",
+    poste: "",
+    commission: "Relations publiques"
+  },
+
+  {
+    nom: "SUNG NI-HAN",
+    postnom: "NKWEY",
+    prenom: "Victoire",
+    promotion: "L2 Droit",
+    poste: "",
+    commission: "Secrétariat"
+  },
+
+  {
+    nom: "PIKA",
+    postnom: "VETULUAKA",
+    prenom: "Pistis",
+    promotion: "M1 SPO",
+    poste: "",
+    commission: "Secrétariat"
+  },
+
+  {
+    nom: "META",
+    postnom: "KASANDA",
+    prenom: "DAVINA",
+    promotion: "L2 FED",
+    poste: "Secrétaire ELF",
+    commission: "Secrétariat"
+  },
+
+  {
+    nom: "KABEY",
+    postnom: "SALA",
+    prenom: "Lys",
+    promotion: "",
+    poste: "Adjoint(e)",
+    commission: "Trésorerie"
+  },
+
+  {
+    nom: "KHANDI",
+    postnom: "MBIKILA",
+    prenom: "Florentine",
+    promotion: "L3 Droit",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "GHATA",
+    postnom: "NGANDA",
+    prenom: "MARIE-ANTOINETTE",
+    promotion: "L2 FED",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "Badianga",
+    postnom: "Kumbu",
+    prenom: "Divine",
+    promotion: "L2 FED",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "MUANZA",
+    postnom: "BABAKA",
+    prenom: "DILEOVIE",
+    promotion: "",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "Kalukodi",
+    postnom: "Yaya",
+    prenom: "Marie Michelle",
+    promotion: "L2 FED",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "Lupembe",
+    postnom: "Asia",
+    prenom: "Maria",
+    promotion: "M1",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "AMINI",
+    postnom: "LWANGA",
+    prenom: "JESSICA",
+    promotion: "",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "Aniboti",
+    postnom: "Lifoka",
+    prenom: "Prisca",
+    promotion: "",
+    poste: "",
+    commission: "Protocole"
+  },
+
+  {
+    nom: "Minduku",
+    postnom: "Nyimi",
+    prenom: "Tony-Michaël",
+    promotion: "M1 SPO",
+    poste: "Adjoint",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "LOKONDO",
+    postnom: "BOFENDA",
+    prenom: "Giovanny",
+    promotion: "M2 Droit",
+    poste: "",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "SAKANDADIENO",
+    postnom: "NTIAKULU",
+    prenom: "GLOIRE",
+    promotion: "L2 Droit",
+    poste: "",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "Mabesi",
+    postnom: "Zivutuka",
+    prenom: "Jerbie",
+    promotion: "L2 FED",
+    poste: "",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "Kompani",
+    postnom: "",
+    prenom: "Marina",
+    promotion: "L2 FED",
+    poste: "",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "Lamiel",
+    postnom: "Antal",
+    prenom: "Lilas",
+    promotion: "M1 SPO",
+    poste: "",
+    commission: "Sensibilisation"
+  },
+
+  {
+    nom: "CIAMA",
+    postnom: "KANYIKI",
+    prenom: "Marie-Corinne",
+    promotion: "L3 FED",
+    poste: "",
+    commission: "Logistique"
+  },
+
+  {
+    nom: "MATABARO",
+    postnom: "FURAHISHA",
+    prenom: "Avelange",
+    promotion: "L3 FED",
+    poste: "",
+    commission: "Logistique"
+  }
 ];
 
 boutonCommencer.addEventListener("click", function () {
