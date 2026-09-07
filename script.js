@@ -77,6 +77,14 @@ const membres = [
     poste: "",
     commission: "Relations publiques"
   },
+  {
+    nom:"Mpoyi",
+    postnom:"kapinga",
+    prenom:"princesse",
+    promotion:"M1 DROIT",
+    poste:"",
+    commission:"Relations publiques"
+  },
 
   {
     nom: "SUNG NI-HAN",
