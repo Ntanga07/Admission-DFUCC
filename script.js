@@ -272,29 +272,54 @@ champNom.addEventListener("keydown", function (event) {
 });
 
 function rechercherMembre() {
+
   const nomEntre = normaliserNom(champNom.value);
 
   if (nomEntre === "") {
-    afficherErreur("Entre ton nom complet pour consulter ton résultat.");
+
+    messageErreur.textContent =
+      "Entre ton nom et ton prénom pour retrouver ton résultat.";
+
+    messageErreur.style.display = "block";
+
     return;
   }
 
-  const motsEntres = nomEntre.split(" ").sort().join(" ");
+  const motsEntres = nomEntre
+    .split(" ")
+    .filter(Boolean);
 
   const membreTrouve = membres.find(function (membre) {
-    const identite = normaliserNom(`${membre.nom} ${membre.prenom}`);
-    const motsMembre = identite.split(" ").sort().join(" ");
-    return identite === nomEntre || motsMembre === motsEntres;
+
+    const identiteComplete = normaliserNom(
+      `${membre.nom} ${membre.postnom || ""} ${membre.prenom}`
+    );
+
+    const motsIdentite = identiteComplete
+      .split(" ")
+      .filter(Boolean);
+
+    return motsEntres.every(function (mot) {
+      return motsIdentite.includes(mot);
+    });
+
   });
 
   if (membreTrouve) {
+
     messageErreur.style.display = "none";
-    afficherResultat(membreTrouve);
+
+    afficherCarte(membreTrouve);
+
   } else {
-    afficherErreur(
-      "Nous n'avons pas retrouvé ce nom. Vérifie l'orthographe et assure-toi d'entrer ton nom complet."
-    );
+
+    messageErreur.textContent =
+      "Nous n'avons pas retrouvé ce nom. Vérifie l'orthographe de ton nom et de ton prénom.";
+
+    messageErreur.style.display = "block";
+
   }
+
 }
 
 function afficherErreur(message) {
