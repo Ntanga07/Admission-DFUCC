@@ -187,15 +187,6 @@ const membres = [
   },
 
   {
-    nom: "Aniboti",
-    postnom: "Lifoka",
-    prenom: "Prisca",
-    promotion: "",
-    poste: "",
-    commission: "Protocole"
-  },
-
-  {
     nom: "Minduku",
     postnom: "Nyimi",
     prenom: "Tony-Michaël",
