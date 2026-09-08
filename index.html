@@ -3,54 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamique Femme UCC</title>
-
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background: #f4faff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .maintenance {
-      max-width: 500px;
-      background: white;
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    h1 {
-      color: #1d5d85;
-    }
-
-    p {
-      line-height: 1.6;
-      color: #555;
-    }
-  </style>
+  <title>Admissions 2026-2027 | Dynamique Femme UCC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="container">
+    <div class="card" id="accueilCard">
+      <img src="images/logo-dynamique.png" alt="Logo Dynamique Femme UCC" class="logo-dynamique">
+      <p class="annee">DYNAMIQUE FEMME UCC • 2026 — 2027</p>
 
-  <div class="maintenance">
-    <h1>Dynamique Femme UCC 💙</h1>
+      <h1>Une nouvelle aventure commence.</h1>
 
-    <p>
-      La plateforme de consultation des résultats est
-      momentanément indisponible.
-    </p>
+      <p class="description">
+        Les résultats sont là. Entre ton nom complet et découvre ton affectation
+        au sein de la Dynamique Femme UCC pour l'année 2026-2027.
+      </p>
 
-    <p>
-      Merci de votre compréhension.
-    </p>
-  </div>
+      <button id="commencer">Découvrir mon résultat</button>
+    </div>
 
+    <div class="card recherche-card" id="rechercheCard">
+      <img src="images/logo-dynamique.png" alt="Logo Dynamique Femme UCC" class="logo-dynamique">
+      <p class="annee">DYNAMIQUE FEMME UCC • 2026 — 2027</p>
+
+      <h2>Découvre ton résultat ✨</h2>
+
+      <p class="description">
+        Entre ton nom complet. Tu peux écrire le prénom avant ou après le nom.
+      </p>
+
+      <input type="text" id="nomMembre" placeholder="Nom complet" autocomplete="off">
+
+      <button id="chercher">Voir mon résultat</button>
+      <p id="messageErreur"></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
